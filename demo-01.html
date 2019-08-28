@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <meta
+    http-equiv="X-UA-Compatible"
+    content="ie=edge"
+  >
+  <title>Document</title>
+  <style>
+    html {
+      width: 100vw;
+      height: 100vh;
+      background: #655;
+      background-image: radial-gradient(tan 20%, transparent 0),
+        radial-gradient(tan 20%, transparent 0);
+      background-size: 30px 30px;
+      background-position: 0 0, 15px 15px;
+    }
+
+    input:not(:focus)+.pop-tips {
+      display: inline-block;
+      transform: translateX(50px) scale(0);
+      transition: transform 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    }
+
+    input:focus+.pop-tips {
+      display: inline-block;
+      transform: translateX(0) scale(1);
+      transition: transform 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    }
+  </style>
+</head>
+
+<body>
+  <input type="text">
+  <span class="pop-tips">please</span>
+  <script src="./index.js"></script>
+  <script>
+    let list = $$('input', document)
+    console.log(Array.isArray(list))
+  </script>
+</body>
+
+</html>
