@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>使用:not()去除无用属性</title>
+    <style>
+      .wrap-first span:not(:first-child)::before {
+        content: ',';
+      }
+      .wrap-second span:not(:nth-child(-n + 3)) {
+        display: none;
+      }
+      div:not(.wrap-first) {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap-first">
+      <span>A</span>
+      <span>B</span>
+      <span>C</span>
+      <span>D</span>
+    </div>
+    <div class="wrap-second">
+      <span>A</span>
+      <span>B</span>
+      <span>C</span>
+      <span>D</span>
+    </div>
+  </body>
+</html>
