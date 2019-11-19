@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <meta
+    http-equiv="X-UA-Compatible"
+    content="ie=edge"
+  />
+  <title>使用transform绘制1px边框</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 90px;
+      line-height: 90px;
+      text-align: center;
+      font-size: 50px;
+      color: orangered;
+    }
+
+    .box.normal {
+      border: 1px solid currentColor;
+    }
+
+    .box.thin {
+      position: relative;
+      margin-top: 20px;
+    }
+
+    .thin::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      border: 1px solid orangered;
+      width: 200%;
+      height: 200%;
+      transform: scale(0.5);
+      transform-origin: 0 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box normal">1px</div>
+  <div class="box thin">0.5px</div>
+</body>
+
+</html>
